@@ -1,0 +1,8 @@
+---
+title: Quarterly report
+output: html_document
+params:
+  team: NA
+---
+
+`r params$team`
