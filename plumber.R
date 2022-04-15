@@ -7,7 +7,7 @@ function(team){
   render("test_report.Rmd", tmp, output_format = "word_document",
          params = list(team = team))
 
-  readBin(tmp, "raw", n=file.info(tmp)$size)
+  readBin(paste0(tmp, ".docx"), "raw", n=file.info(paste0(tmp, ".docx"))$size)
 }
 
 #* @serializer contentType list(type="text/html; charset=utf-8")
@@ -18,7 +18,7 @@ function(team){
   render("test_report.Rmd", tmp, output_format = "html_document",
          params = list(team = team))
   
-  readBin(tmp, "raw", n=file.info(tmp)$size)
+  readBin(paste0(tmp, ".html"), "raw", n=file.info(paste0(tmp, ".html"))$size)
 }
 
 #* @serializer contentType list(type="application/html")
